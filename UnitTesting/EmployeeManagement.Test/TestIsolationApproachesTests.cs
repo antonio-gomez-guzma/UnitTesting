@@ -16,7 +16,7 @@ namespace EmployeeManagement.Test
         [Fact]
         public async Task AttendCourseAsync_CourseAttended_SuggestedBonusMustCorrectlyBeRecalculated()
         {
-            // ARRANGE -----------------------------------------------------------------------
+            // Arrange
             var connection = new SqliteConnection("Data Source=:memory:");
             connection.Open();
 
@@ -50,10 +50,10 @@ namespace EmployeeManagement.Test
             var expectedSuggestedBonus = internalEmployee.YearsInService
                 * (internalEmployee.AttendedCourses.Count + 1) * 100;
 
-            // ACT -----------------------------------------------------------------------
+            // Act
             await employeeService.AttendCourseAsync(internalEmployee, courseToAttend);
 
-            // ASSERT -----------------------------------------------------------------------
+            // Assert
             Assert.Equal(expectedSuggestedBonus, internalEmployee.SuggestedBonus);
         }
 
