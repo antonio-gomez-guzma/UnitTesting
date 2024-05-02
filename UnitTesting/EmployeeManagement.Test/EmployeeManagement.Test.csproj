@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagement\EmployeeManagement.csproj" />
+    <ProjectReference Include="..\TopLevelManagement\TopLevelManagement.csproj" />
   </ItemGroup>
 
   <ItemGroup>
